@@ -24,12 +24,18 @@
     <ClCompile Include="node.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="linked_list.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dog.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="node.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="linked_list.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
