@@ -84,3 +84,14 @@ void LinkedList::insertSortedByAge(Dog* newDog)
 	previous->setNext(newNode);
 	newNode->setNext(current);
 }
+
+void LinkedList::deleteAtStartup()
+{
+	if (head == nullptr)
+	{
+		cout << "No hay nada es la lista";
+		return;
+	}
+
+	head = head->getNext();
+}
