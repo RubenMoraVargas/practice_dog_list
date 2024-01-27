@@ -174,3 +174,31 @@ bool LinkedList::searchForADogByName(Dog* newDog)
 	}
 	return false;
 }
+
+void LinkedList::findAllDogsUnderACertainAge(int maxAge)
+{
+	Node* current = head;
+
+	while (current != nullptr)
+	{
+		if (current->getData()->getAge() < maxAge)
+		{
+			cout << "La edad es: " << current->getData()->getAge() << " | ";
+			cout << "La raza es: " << current->getData()->getBreed() << " | ";
+			if (current->getData()->getHasOwner() == true)
+			{
+				cout << "Si tiene dueno: " << current->getData()->getHasOwner() << " | ";
+			}
+			else
+			{
+				cout << "No tiene dueno: " << current->getData()->getHasOwner() << " | ";
+			}
+
+			cout << "El nombre es: " << current->getData()->getName() << " | ";
+			cout << endl << endl;
+
+		}
+		current = current->getNext();
+	}
+
+}
