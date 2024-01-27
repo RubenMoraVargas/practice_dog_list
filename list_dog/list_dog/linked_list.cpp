@@ -233,3 +233,35 @@ void LinkedList::sortTheListByAgeAndDisplayIt()
 
 	} while (swap);
 }
+
+void LinkedList::showDog()
+{
+	if (head == nullptr)
+	{
+		cout << "La lista esta vacia " << endl;
+		return;
+	}
+
+
+	Node* current = head;
+
+	while (current != nullptr)
+	{
+		cout << "El nombre es: " << current->getData()->getName() << " | ";
+		cout << "La edad es: " << current->getData()->getAge() << " | ";
+		cout << "La raza es: " << current->getData()->getBreed() << " | ";
+
+		if (current->getData()->getHasOwner() == true)
+		{
+			cout << "Si tiene dueno: " << current->getData()->getHasOwner() << " | ";
+		}
+		else
+		{
+			cout << "No tiene dueno: " << current->getData()->getHasOwner() << " | ";
+		}
+
+
+		cout << endl << endl;
+		current = current->getNext();
+	}
+}

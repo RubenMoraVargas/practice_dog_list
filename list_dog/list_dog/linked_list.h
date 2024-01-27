@@ -19,5 +19,5 @@ public:
     bool searchForADogByName(Dog* newDog);
     void findAllDogsUnderACertainAge(int maxAge);
     void sortTheListByAgeAndDisplayIt();
-    void print();
+    void showDog();
 };
