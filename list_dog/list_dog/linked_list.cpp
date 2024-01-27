@@ -95,3 +95,23 @@ void LinkedList::deleteAtStartup()
 
 	head = head->getNext();
 }
+void LinkedList::deleteAtTheEnd()
+{
+	Node* actualPosition = head;
+	Node* previousPosition = nullptr;
+
+	if (head = nullptr)
+	{
+		cout << "La lista esta vacia ";
+		return;
+	}
+
+	while (actualPosition->getNext() != nullptr)
+	{
+		previousPosition = actualPosition;
+		actualPosition = actualPosition->getNext();
+	}
+
+	previousPosition->setNext(nullptr);
+	delete[] actualPosition;
+}
