@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dog.cpp" />
     <ClCompile Include="list_dog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
