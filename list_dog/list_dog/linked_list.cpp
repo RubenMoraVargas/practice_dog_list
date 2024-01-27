@@ -35,3 +35,23 @@ void LinkedList::insertAtTheBeginning(Dog* newDog)
 		head = newNode;
 	}
 }
+
+void LinkedList::insertAtTheEnd(Dog* newDog)
+{
+	Node* newNode = new Node(newDog);
+	Node* current = head;
+
+	if (head == nullptr)
+	{
+		head = newNode;
+	}
+	else
+	{
+		while (current->getNext() != nullptr)
+		{
+			current = current->getNext();
+		}
+
+		current->setNext(newNode);
+	}
+}
