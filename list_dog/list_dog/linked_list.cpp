@@ -153,3 +153,24 @@ void LinkedList::deleteByPosition(Node* actualPosition, Node* previusPosition)
 
 	previusPosition->setNext(actualPosition->getNext());
 }
+
+bool LinkedList::searchForADogByName(Dog* newDog)
+{
+	Node* newNode = new Node(newDog);
+	Node* current = head;
+
+	if (head == nullptr)
+	{
+		return false;
+	}
+
+	while (current != nullptr)
+	{
+		if (current->getData()->getName() == newDog->getName())
+		{
+			return true;
+		}
+		current = current->getNext();
+	}
+	return false;
+}
