@@ -202,3 +202,34 @@ void LinkedList::findAllDogsUnderACertainAge(int maxAge)
 	}
 
 }
+
+void LinkedList::sortTheListByAgeAndDisplayIt()
+{
+	Node* current;
+	bool swap;
+	int auxiliary = 0;
+
+	if (head == nullptr)
+	{
+		return;
+	}
+
+	do
+	{
+		current = head;
+		swap = false;
+
+		while (current != nullptr && current->getNext() != nullptr)
+		{
+			if (current->getData()->getAge() > current->getNext()->getData()->getAge())
+			{
+				auxiliary = current->getData()->getAge();
+				current->getData()->setAge(current->getNext()->getData()->getAge());
+				current->getNext()->getData()->setAge(auxiliary);
+				swap = true;
+			}
+			current = current->getNext();
+		}
+
+	} while (swap);
+}
