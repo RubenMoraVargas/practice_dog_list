@@ -115,3 +115,41 @@ void LinkedList::deleteAtTheEnd()
 	previousPosition->setNext(nullptr);
 	delete[] actualPosition;
 }
+
+void LinkedList::deleteAnIndex(Dog* newDog)
+{
+	Node* newNode = new Node(newDog);
+	Node* actualPosition = head;
+	Node* previusPosition = nullptr;
+
+	if (head == nullptr)
+	{
+		return;
+	}
+
+	while (actualPosition->getNext() != nullptr && actualPosition->getData() != newDog)
+	{
+		previusPosition = actualPosition;
+		actualPosition = actualPosition->getNext();
+	}
+
+	deleteByPosition(actualPosition, previusPosition);
+
+}
+
+void LinkedList::deleteByPosition(Node* actualPosition, Node* previusPosition)
+{
+	if (previusPosition == nullptr)
+	{
+		deleteAtStartup();
+		return;
+	}
+
+	if (actualPosition->getNext() == nullptr)
+	{
+		deleteAtTheEnd();
+		return;
+	}
+
+	previusPosition->setNext(actualPosition->getNext());
+}
