@@ -55,3 +55,32 @@ void LinkedList::insertAtTheEnd(Dog* newDog)
 		current->setNext(newNode);
 	}
 }
+
+void LinkedList::insertSortedByAge(Dog* newDog)
+{
+	Node* newNode = new Node(newDog);
+	Node* current = head;
+	Node* previous = nullptr;
+
+	if (head == nullptr)
+	{
+		head = newNode;
+		return;
+	}
+
+	if (newNode->getData()->getAge() <= current->getData()->getAge())
+	{
+		newNode->setNext(head);
+		head = newNode;
+		return;
+	}
+
+	while (current != nullptr && newNode->getData()->getAge() >= current->getData()->getAge())
+	{
+		previous = current;
+		current = current->getNext();
+	}
+
+	previous->setNext(newNode);
+	newNode->setNext(current);
+}
