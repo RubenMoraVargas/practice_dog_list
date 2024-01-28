@@ -8,10 +8,7 @@ LinkedList::LinkedList()
 LinkedList::~LinkedList()
 {
 	Node* current = head;
-	if (head == nullptr)
-	{
-		return;
-	}
+	if (head == nullptr) return; // para simplificar
 
 	while (current != nullptr)
 	{
@@ -25,7 +22,7 @@ void LinkedList::insertAtTheBeginning(Dog* newDog)
 {
 	Node* newNode = new Node(newDog);
 
-	if (head != nullptr)
+	if (head != nullptr) // Se peude simplificar el codigo invirtiendo el if y borrando el else
 	{
 		newNode->setNext(head);
 		head = newNode;
@@ -45,7 +42,7 @@ void LinkedList::insertAtTheEnd(Dog* newDog)
 	{
 		head = newNode;
 	}
-	else
+	else // Cambiar por un return
 	{
 		while (current->getNext() != nullptr)
 		{
@@ -85,7 +82,7 @@ void LinkedList::insertSortedByAge(Dog* newDog)
 	newNode->setNext(current);
 }
 
-void LinkedList::deleteAtStartup()
+void LinkedList::deleteAtStartup() //deleteAtStart
 {
 	if (head == nullptr)
 	{
@@ -138,7 +135,7 @@ void LinkedList::deleteAnIndex(Dog* newDog)
 }
 
 void LinkedList::deleteByPosition(Node* actualPosition, Node* previusPosition)
-{
+{ // ver si es privado
 	if (previusPosition == nullptr)
 	{
 		deleteAtStartup();
